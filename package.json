@@ -1,0 +1,19 @@
+{
+  "name": "reduse-app",
+  "version": "1.0.0",
+  "description": "Reduceri app backend and static frontend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check-prices": "node jobs/check-prices.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^18.0.3",
+    "express": "^4.21.2"
+  }
+}

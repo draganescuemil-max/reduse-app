@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reduceri AI</title>
+    <meta
+      name="description"
+      content="Aplicație mobilă AI pentru căutarea prețurilor, reducerilor și codurilor promoționale din România."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-badge">R</div>
+          <div>
+            <p class="eyebrow">AI Shopping</p>
+            <h1>Reduceri</h1>
+          </div>
+        </div>
+        <button id="toggleFilters" class="ghost-button" type="button">Filtre</button>
+      </header>
+
+      <main class="screen">
+        <section class="search-panel card">
+          <label class="search-label" for="searchInput">Ce vrei să cumperi?</label>
+          <div class="search-box">
+            <span class="search-icon">⌕</span>
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Adidas Ultraboost mărimea 27.5 cm până în 500 lei"
+              autocomplete="off"
+            />
+            <button id="searchButton" type="button">Caută</button>
+          </div>
+
+        </section>
+
+        <aside id="filterPanel" class="filter-panel card hidden">
+          <div class="filter-header">
+            <h3>Filtre</h3>
+            <button id="resetFilters" class="text-button" type="button">Reset</button>
+          </div>
+
+          <div class="filter-grid">
+            <label>
+              <span>Buget maxim</span>
+              <select id="budgetFilter">
+                <option value="all">Orice</option>
+                <option value="300">300 lei</option>
+                <option value="500">500 lei</option>
+                <option value="1000">1000 lei</option>
+                <option value="3000">3000 lei</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Tip produs</span>
+              <select id="variantFilter">
+                <option value="all">Toate</option>
+                <option value="original">Original</option>
+                <option value="compatibil">Compatibil</option>
+                <option value="alternativ">Alternativ</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Disponibilitate</span>
+              <select id="stockFilter">
+                <option value="all">Toate</option>
+                <option value="in-stock">În stoc</option>
+                <option value="limited">Limitat</option>
+              </select>
+            </label>
+          </div>
+        </aside>
+
+        <section id="categoryBar" class="category-bar"></section>
+        <section id="insightPanel" class="insight-panel card"></section>
+
+        <section class="summary-grid">
+          <article class="metric card">
+            <span class="metric-label">Cea mai bună ofertă</span>
+            <strong id="bestPrice">—</strong>
+            <small id="bestStore">—</small>
+          </article>
+          <article class="metric card">
+            <span class="metric-label">Economii</span>
+            <strong id="savings">—</strong>
+            <small>față de prețul de referință</small>
+          </article>
+          <article class="metric card">
+            <span class="metric-label">Disponibil</span>
+            <strong id="availability">—</strong>
+            <small>în magazine relevante</small>
+          </article>
+        </section>
+
+        <section class="section-header">
+          <h2>Oferta recomandată</h2>
+          <span class="status online">Live</span>
+        </section>
+
+        <section id="recommendationCard" class="recommendation-card card"></section>
+
+        <section class="section-header">
+          <h2>Produse relevante</h2>
+        </section>
+
+        <section id="productList" class="product-list"></section>
+      </main>
+
+      <nav class="bottom-nav card" aria-label="Navigare aplicație">
+        <button class="nav-button active" type="button" data-tab="explore">Explorare</button>
+        <button class="nav-button" type="button" data-tab="favorites">Favorite</button>
+        <button class="nav-button" type="button" data-tab="monitor">Monitorizate</button>
+        <button class="nav-button" type="button" data-tab="history">Istoric</button>
+      </nav>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

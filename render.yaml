@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: reduse-app
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: CRON_SECRET
+        sync: false
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
+
+  - type: cron
+    name: reduse-price-checker
+    env: node
+    plan: starter
+    schedule: "0 * * * *"
+    buildCommand: npm install
+    startCommand: npm run check-prices
+    envVars:
+      - key: PRICE_CHECK_API_URL
+        sync: false
+      - key: CRON_SECRET
+        sync: false
