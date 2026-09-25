@@ -1,0 +1,2 @@
+# reduse-app
+Aplicatie Reduceri
